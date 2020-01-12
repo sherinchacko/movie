@@ -18,13 +18,14 @@
             </li>
           </ul>
     </nav>
+    <form method="GET">
     <table class="table">
         <tr>
             <td>
                 Movie name
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"name="getMovieName"class="form-control">
             </td>
         </tr>
         <tr>
@@ -32,7 +33,7 @@
                 Actor name
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"name="getActorName"class="form-control">
             </td>
         </tr>
         <tr>
@@ -40,7 +41,7 @@
                 Acttress
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"name="getActtressName"class="form-control">
             </td>
         </tr>
         <tr>
@@ -48,7 +49,7 @@
                 Director
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"name="getDirectorName"class="form-control">
             </td>
         </tr>
         <tr>
@@ -56,7 +57,7 @@
                 Camera
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"name="getCameraName"class="form-control">
             </td>
         </tr>
         <tr>
@@ -64,7 +65,7 @@
                 Producer
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"name="getProducerName"class="form-control">
             </td>
         </tr>
         <tr>
@@ -72,7 +73,7 @@
                 Distributer
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"name="getDistributerName"class="form-control">
             </td>
         </tr>
         <tr>
@@ -80,22 +81,52 @@
                 Released year
             </td>
             <td>
-                <input type="text"class="form-control">
+                <input type="text"name="getReleasedYear"class="form-control">
             </td>
         </tr>
         <tr>
             <td>
-                <button class="btn btn-warning">
+                <button type="reset" class="btn btn-warning">
                     RESET
                 </button>
 
             </td>
             <td>
-                <button class=" btn btn-danger">
+                <button type="submit"name="submit" class=" btn btn-danger">
                     SUBMIT
                 </button>
             </td>
         </tr>
     </table>
+</form>
 </body>
 </html>
+<?php
+if(isset($_GET["submit"]))
+{
+    $Movie=$_GET["getMovieName"];
+    $Actor=$_GET["getActorName"];
+    $Acttress=$_GET["getActtressName"];
+    $Director=$_GET["getDirectorName"];
+    $Camera=$_GET["getCameraName"];
+    $Producer=$_GET["getProducerName"];
+    $Distributer=$_GET["getDistributerName"];
+    $Released=$_GET["getReleasedYear"];
+    echo $Movie;
+    echo "<br>";
+    echo $Actor;
+    echo "<br>";
+    echo $Acttress;
+    echo "<br>";
+    echo $Director;
+    echo "<br>";
+    echo $Camera;
+    echo "<br>";
+    echo $Producer;
+    echo "<br>";
+    echo $Distributer;
+    echo "<br>";
+    echo $Released;
+    echo "<br>";
+}
+?>
