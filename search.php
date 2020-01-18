@@ -11,10 +11,10 @@
     <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item Active">
-              <a class="nav-link" href="movie.html">Movie entry</a>
+              <a class="nav-link" href="movie.php">Movie entry</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="search.html">Movie search</a>
+              <a class="nav-link" href="search.php">Movie search</a>
             </li>
           </ul>
     </nav>
@@ -22,4 +22,33 @@
        search
    </h1> 
 </body>
+<form method="GET">
+<table class="table">
+  <tr>
+    <td>
+      Name of the movie:
+    </td>
+    <td>
+      <input type="text"class="form-control"name="getName">
+    </td>
+  </tr>
+  <tr>
+    <td>
+
+    </td>
+    <td>
+      <button type="submit" class="btn btn-success"name="submit">
+        Search
+      </button>
+    </td>
+  </tr>
+</table>
+</form>
 </html>
+<?php
+if(isset($_GET["submit"]))
+{
+  $Movie=$_GET["getName"];
+  echo $Movie;
+}
+?>

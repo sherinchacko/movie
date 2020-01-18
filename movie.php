@@ -11,10 +11,10 @@
     <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item Active">
-              <a class="nav-link" href="index.html">Movie entry</a>
+              <a class="nav-link" href="index.php">Movie entry</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="search.html">Movie search</a>
+              <a class="nav-link" href="search.php">Movie search</a>
             </li>
           </ul>
     </nav>
