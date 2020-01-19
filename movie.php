@@ -112,21 +112,22 @@ if(isset($_GET["submit"]))
     $Producer=$_GET["getProducerName"];
     $Distributer=$_GET["getDistributerName"];
     $Released=$_GET["getReleasedYear"];
-    echo $Movie;
-    echo "<br>";
-    echo $Actor;
-    echo "<br>";
-    echo $Acttress;
-    echo "<br>";
-    echo $Director;
-    echo "<br>";
-    echo $Camera;
-    echo "<br>";
-    echo $Producer;
-    echo "<br>";
-    echo $Distributer;
-    echo "<br>";
-    echo $Released;
-    echo "<br>";
+    $Servername="localhost";
+    $Dbusername="root";
+    $Dbpassword="";
+    $Dbname="movie";
+    $connection=new mysqli($Servername,$Dbusername,$Dbpassword,$Dbname);
+    $Sql="INSERT INTO `moviedetails`( `moviename`, `actor`, `acttress`, `director`, `camera`, `producer`, `distributer`, `releasedyear`)
+     VALUES ('$Movie','$Actor','$Acttress','$Director','$Camera','$Producer','$Distributer',$Released)";
+     $connection->query($Sql);
+     $result= $connection->query($Sql);
+     if($result===TRUE)
+     {
+     echo "successfull";
+     }
+     else{
+         echo $connection->error;
+     }
+ 
 }
 ?>
