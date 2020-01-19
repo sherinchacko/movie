@@ -119,8 +119,7 @@ if(isset($_GET["submit"]))
     $connection=new mysqli($Servername,$Dbusername,$Dbpassword,$Dbname);
     $Sql="INSERT INTO `moviedetails`( `moviename`, `actor`, `acttress`, `director`, `camera`, `producer`, `distributer`, `releasedyear`)
      VALUES ('$Movie','$Actor','$Acttress','$Director','$Camera','$Producer','$Distributer',$Released)";
-     $connection->query($Sql);
-     $result= $connection->query($Sql);
+     $result=$connection->query($Sql);
      if($result===TRUE)
      {
      echo "successfull";
