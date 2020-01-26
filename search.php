@@ -49,6 +49,35 @@
 if(isset($_GET["submit"]))
 {
   $Movie=$_GET["getName"];
-  echo $Movie;
-}
+  $Servername="localhost";
+  $Dbusername="root";
+  $Dbpassword="";
+  $Dbname="movie";
+  $connection=new mysqli($Servername,$Dbusername,$Dbpassword,$Dbname);
+  $Sql="SELECT `actor`, `acttress`, `director`, `camera`, `producer`, `distributer`, `releasedyear` FROM `moviedetails` WHERE `moviename`='$Movie'";
+  $result=$connection->query($Sql);
+  if($result->num_rows>0)
+  {
+    while($row=$result->fetch_assoc())
+    {
+      $Actor=$row["actor"];
+      $Acctress=$row["acttress"];
+      $Director=$row["director"];
+      $Camera=$row["camera"];
+      $Producer=$row["producer"];
+      $Distributer=$row["distributer"];
+      $Release=$row["releasedyear"];
+      echo"<table class='table'> <tr> <td> actor </td> <td> $Actor </td> </tr>
+      <tr> <td> acttress </td> <td> $Acctress </td> </tr>
+      <tr> <td> director </td> <td> $Director </td> </tr>
+      <tr> <td> camera </td> <td> $Camera </td> </tr>
+      <tr> <td> producer </td> <td> $Producer </td> </tr>
+      <tr> <td> distributer </td> <td> $Distributer </td> </tr>
+      <tr> <td> releasedyear </td> <td> $Release </td> </tr>";
+    }
+  }
+    else{
+      echo "invalid";
+    }
+  }
 ?>
