@@ -11,14 +11,20 @@
     <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item Active">
-              <a class="nav-link" href="index.php">Movie entry</a>
+              <a class="nav-link" href="movie.php">Movie entry</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="search.php">Movie search</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="update.php">Update Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="delete.php">Delete Details</a>
+            </li>
           </ul>
     </nav>
-    <form method="GET">
+    <form method="POST">
     <table class="table">
         <tr>
             <td>
@@ -102,16 +108,16 @@
 </body>
 </html>
 <?php
-if(isset($_GET["submit"]))
+if(isset($_POST["submit"]))
 {
-    $Movie=$_GET["getMovieName"];
-    $Actor=$_GET["getActorName"];
-    $Acttress=$_GET["getActtressName"];
-    $Director=$_GET["getDirectorName"];
-    $Camera=$_GET["getCameraName"];
-    $Producer=$_GET["getProducerName"];
-    $Distributer=$_GET["getDistributerName"];
-    $Released=$_GET["getReleasedYear"];
+    $Movie=$_POST["getMovieName"];
+    $Actor=$_POST["getActorName"];
+    $Acttress=$_POST["getActtressName"];
+    $Director=$_POST["getDirectorName"];
+    $Camera=$_POST["getCameraName"];
+    $Producer=$_POST["getProducerName"];
+    $Distributer=$_POST["getDistributerName"];
+    $Released=$_POST["getReleasedYear"];
     $Servername="localhost";
     $Dbusername="root";
     $Dbpassword="";

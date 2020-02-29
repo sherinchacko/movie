@@ -9,20 +9,25 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-danger navbar-dark">
-        <ul class="navbar-nav">
+           <ul class="navbar-nav">
             <li class="nav-item Active">
               <a class="nav-link" href="movie.php">Movie entry</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="search.php">Movie search</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="update.php">Update Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="delete.php">Delete Details</a>
+            </li>
           </ul>
     </nav>
    <h1>
-       search
+      <center> Search Here </center>
    </h1> 
-</body>
-<form method="GET">
+<form method="POST">
 <table class="table">
   <tr>
     <td>
@@ -44,11 +49,12 @@
   </tr>
 </table>
 </form>
+</body>
 </html>
 <?php
-if(isset($_GET["submit"]))
+if(isset($_POST["submit"]))
 {
-  $Movie=$_GET["getName"];
+  $Movie=$_POST["getName"];
   $Servername="localhost";
   $Dbusername="root";
   $Dbpassword="";
